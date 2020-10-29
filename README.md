@@ -1,5 +1,7 @@
 # talktalk
 **all examples are for github web interface**
+### how to add a file
+click add file and then in the dropdown click create new file
 ### how to make a post
 go into topics  
 go into the topic you want to post on  
