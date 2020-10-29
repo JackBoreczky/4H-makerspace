@@ -1,1 +1,1 @@
-*fun*
+*fun is no longer fun*
