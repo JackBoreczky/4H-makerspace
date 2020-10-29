@@ -1,1 +1,1 @@
-print ("this is a hello from mars")
+print ("this_is_a_hello_from_mars")
