@@ -1,3 +1,5 @@
+# understanding this see https://stackoverflow.com/a/509295
+
 import shlex
 
 def handle(cmd,args):
