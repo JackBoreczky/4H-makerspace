@@ -11,7 +11,7 @@ create a new file called USERNAME_HyphenatedPostName.md with contents:
 > post contents  
 > \#### reply after here  
 
-commit directly with commit message "created post FILENAME int topic TOPIC"  
+commit directly with commit message "created post FILENAME in topic TOPIC"  
 and you are done!
 ### how to reply
 go to post you want to reply to and click edit  
