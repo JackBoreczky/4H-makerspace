@@ -24,9 +24,10 @@ def handle(cmd,args):
 def main():
 	while True:
 		cmdargs=shlex.split(input(os.environ.get("PYFUNTEXTPROMPT",">")))
-		cmd=cmdargs[0]
-		args=cmdargs[1:]
-		handle(cmd,args)
+		if len(cmdargs)>0:
+			cmd=cmdargs[0]
+			args=cmdargs[1:]
+			handle(cmd,args)
 
 if __name__ == "__main__":
 	main()
