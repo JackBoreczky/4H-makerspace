@@ -3,9 +3,23 @@
 import shlex
 import os
 
+def handle_jack(cmd,args):
+	print(cmd)
+	print(args)
+
+## DEFINE CMDS HERE
+def cmd_fly(args):
+	print("i can fly!")
+
+cmddict={}
+## ADD CMDS TO CMDDICT HERE
+cmddict["fly"]=cmd_fly
+
 def handle(cmd,args):
 	print(cmd)
 	print(args)
+	cmddict[cmd](args)
+
 
 def main():
 	while True:
