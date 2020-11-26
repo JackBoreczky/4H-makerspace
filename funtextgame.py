@@ -24,7 +24,7 @@ def handle(cmd,args):
 def main():
 	while True:
 		cmdargs=shlex.split(input(os.environ.get("PYFUNTEXTPROMPT",">")))
-		if len(cmdargs)<0:
+		if len(cmdargs)>0:
 			cmd=cmdargs[0]
 			args=cmdargs[1:]
 			handle(cmd,args)
