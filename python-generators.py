@@ -6,7 +6,7 @@ def gen():
 		x = yield x # get the next value out of send
 
 g=gen()
-print(g.next())
+print(next(g))
 print(g.send(None))
 print(g.send(1))
-print(g.next())
+print(next(g))
