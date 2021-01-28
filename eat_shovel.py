@@ -6,6 +6,11 @@ class Interactible(abc.ABC):
     def interact(self, args):
         pass
 
+class Playable(abc.ABC):
+    @abc.abstractmethod
+    def play(self):
+        pass
+
 class BaseEntity(abc.ABC):
     def __init__(self, name, room):
         self.name = name
@@ -31,3 +36,17 @@ class Room():
 
     def getWalkRoom(self, direction):
         return self.roommap.get(direction, None)
+
+class Game:
+    def __init__(self, player):
+        self.player = player
+
+    def play(self):
+        self.player.play()
+
+def main():
+    # everything you run on startup is in here (unless its global init)
+    pass
+
+if __name__ == '__main__':
+    main()
