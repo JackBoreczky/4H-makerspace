@@ -71,7 +71,7 @@ def main():
     game = Game(player)
     try:
         game.play()
-    except EOFError as eoferr:
+    except BaseException as e:
         print("\nBye!")
 
 if __name__ == '__main__':
