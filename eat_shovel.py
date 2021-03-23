@@ -1,5 +1,5 @@
 try:
-  import readline as _readline
+  import readline as _readline # lets us use the up and down arrows
 except ImportError:
   import pyreadline as _readline
 import abc
@@ -43,6 +43,7 @@ class BaseItem(abc.ABC):
     def use(self, user):
         pass
 
+# TODO: lock directions
 class Room():
     def __init__(self, roomname = "A Normal Room", description = "Nothing special here, just a room", directionroom = {}, items = []):
         self.roommap = directionroom
@@ -78,7 +79,7 @@ def main():
     game = Game(player)
     try:
         game.play()
-    except EOFError as eoferr:
+    except BaseException as e:
         print("\nBye!")
 
 if __name__ == '__main__':
