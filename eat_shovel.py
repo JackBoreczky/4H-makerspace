@@ -1,4 +1,7 @@
-import readline as _readline # lets us use the up and down arrows
+try:
+  import readline as _readline # lets us use the up and down arrows
+except ImportError:
+  import pyreadline as _readline
 import abc
 import shlex
 
@@ -61,11 +64,16 @@ class Game():
 def act_nuke(player, _cmd):
     print("BOOM!")
 
+# A handy way to exit the game
+def exit_game(player, _cmd):
+    raise EOFError
+
 def main():
     # everything you run on startup is in here (unless its global init)
     start_room = Room()
     cmd_map = {
-        "nuke": act_nuke
+        "nuke": act_nuke,
+        "exit": exit_game,
     }
     player = Player(start_room, cmd_map)
     game = Game(player)
