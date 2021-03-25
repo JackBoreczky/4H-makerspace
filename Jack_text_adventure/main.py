@@ -8,7 +8,7 @@ num_loops = 10
 for i in range(10):
     print(i)
 
-while num_loops >= 0:
+while running:
     name = input("Hello! please tell me who you are: ")
 
     print(name)
@@ -21,7 +21,6 @@ while num_loops >= 0:
     else:
         print("You're not Jack")
 
-    print("after the if statement")
     num_loops = num_loops - 1
 
     # Jump back to the while and check the condition
