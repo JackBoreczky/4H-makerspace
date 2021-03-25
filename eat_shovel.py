@@ -1,14 +1,16 @@
 try:
-  import readline as _readline # lets us use the up and down arrows
+    import readline as _readline  # lets us use the up and down arrows
 except ImportError:
-  import pyreadline as _readline
+    import pyreadline as _readline
 import abc
 import shlex
+
 
 class Playable(abc.ABC):
     @abc.abstractmethod
     def play(self):
         pass
+
 
 class BaseEntity(abc.ABC):
     def __init__(self, name, room):
@@ -20,6 +22,7 @@ class BaseEntity(abc.ABC):
         maching = [item for item in self.items if item.name == itemname]
         if len(maching) == 1:
             maching[0].use(self)
+
 
 class Player(BaseEntity, Playable):
     def __init__(self, start_room, cmd_map):
@@ -35,6 +38,7 @@ class Player(BaseEntity, Playable):
             else:
                 print("sorry, but i do not understand.")
 
+
 class BaseItem(abc.ABC):
     def __init__(self, name):
         self.name = name
@@ -43,9 +47,16 @@ class BaseItem(abc.ABC):
     def use(self, user):
         pass
 
+
 # TODO: lock directions
-class Room():
-    def __init__(self, roomname = "A Normal Room", description = "Nothing special here, just a room", directionroom = {}, items = []):
+class Room:
+    def __init__(
+        self,
+        roomname="A Normal Room",
+        description="Nothing special here, just a room",
+        directionroom={},
+        items=[],
+    ):
         self.roommap = directionroom
         self.roomname = roomname
         self.roomdesc = description
@@ -53,28 +64,29 @@ class Room():
     def getWalkRoom(self, direction):
         return self.roommap.get(direction, None)
 
-class Game():
+
+class Game:
     def __init__(self, player):
         self.player = player
 
     def play(self):
         self.player.play()
 
+
 # underscore b/c we dont use cmd
 def act_nuke(player, _cmd):
     print("BOOM!")
+
 
 # A handy way to exit the game
 def exit_game(player, _cmd):
     raise EOFError
 
+
 def main():
     # everything you run on startup is in here (unless its global init)
     start_room = Room()
-    cmd_map = {
-        "nuke": act_nuke,
-        "exit": exit_game,
-    }
+    cmd_map = {"nuke": act_nuke, "exit": exit_game}
     player = Player(start_room, cmd_map)
     game = Game(player)
     try:
@@ -82,5 +94,6 @@ def main():
     except BaseException as e:
         print("\nBye!")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
