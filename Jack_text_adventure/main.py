@@ -1,16 +1,29 @@
 # Types of values:
 string = "this is a string"
 
-name = input("Hello! please tell me who you are: ")
-favorite_animal = input("What's your favorite animal? ")
+running = True
 
-print(name)
+num_loops = 10
 
-if name == "Jack":
-    print("You're our favorite!")
-elif name == "Luke":
-    print("You're not allowed into my program")
-else:
-    print("You're not Jack")
+for i in range(10):
+    print(i)
+
+while num_loops >= 0:
+    name = input("Hello! please tell me who you are: ")
+
+    print(name)
+
+    if name == "Jack":
+        print("You're our favorite!")
+    elif name == "Luke":
+        print("You're not allowed into my program")
+        running = False
+    else:
+        print("You're not Jack")
+
+    print("after the if statement")
+    num_loops = num_loops - 1
+
+    # Jump back to the while and check the condition
 
 print("Goodbye!")
