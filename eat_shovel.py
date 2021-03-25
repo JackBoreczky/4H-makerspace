@@ -73,7 +73,7 @@ def main():
     start_room = Room()
     cmd_map = {
         "nuke": act_nuke,
-        "exit": exit_game
+        "exit": exit_game,
     }
     player = Player(start_room, cmd_map)
     game = Game(player)
