@@ -1,4 +1,4 @@
-from curses import wrapper
+import curses
 
 def main(stdscr):
     # Clear screen
@@ -12,4 +12,4 @@ def main(stdscr):
     stdscr.refresh()
     stdscr.getkey()
 
-wrapper(main)
+curses.wrapper(main)
